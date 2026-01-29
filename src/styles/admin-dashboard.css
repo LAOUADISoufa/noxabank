@@ -1,0 +1,211 @@
+/* Page admin takes FULL screen (even if login.css still loaded) */
+.adb {
+  width: 100vw;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Full width wrapper */
+.adb-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+}
+
+/* SIDEBAR */
+.adb-sb {
+  width: 280px;
+  min-width: 280px;
+  min-height: calc(100vh - 36px);
+
+  background: linear-gradient(180deg, #6d3fd1, #3a1c8a);
+  color: #fff;
+
+  border-radius: 18px;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.adb-brand {
+  margin-bottom: 18px;
+}
+
+.adb-title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.adb-sub {
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+.adb-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  flex: 1;
+}
+
+.adb-item {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.adb-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.adb-item.active {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.adb-bottom {
+  margin-top: 10px;
+}
+
+.adb-logout {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: 800;
+}
+
+.adb-logout:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* MAIN */
+.adb-main {
+  flex: 1;
+  min-height: calc(100vh - 36px);
+  width: 100%;
+
+  background: linear-gradient(180deg, #5b2bbd, #32107a);
+  color: #fff;
+
+  border-radius: 18px;
+  padding: 22px;
+
+  overflow: auto;
+}
+
+/* TOPBAR */
+.adb-topbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.adb-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 12px;
+  border-radius: 14px;
+  flex: 1;
+  max-width: 520px;
+}
+
+.adb-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+}
+
+.adb-search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.adb-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.adb-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.adb-name {
+  font-weight: 900;
+}
+
+.adb-role {
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+/* Empty content area */
+.adb-content {
+  min-height: 60vh;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .adb-wrapper {
+    flex-direction: column;
+  }
+
+  .adb-sb {
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+  }
+
+  .adb-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .adb-main {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .adb-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .adb-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .adb-search {
+    max-width: 100%;
+  }
+
+  .adb-user {
+    width: 100%;
+    justify-content: center;
+  }
+}
