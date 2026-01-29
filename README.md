@@ -1,5 +1,5 @@
 ## Installation
 
-1. npm install /n
-2. npm run dev /n
+1. npm install 
+2. npm run dev 
 3. npm create vite@latest
