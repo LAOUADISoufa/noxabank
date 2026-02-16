@@ -1,12 +1,23 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/dashboard.css";
 
 export default function DashboardPage() {
+  const navigate = useNavigate();
   const fullName = localStorage.getItem("fullName") || "Client";
+  const role = (localStorage.getItem("role") || "client").toLowerCase();
+
+  // ✅ Protection : si admin → redirige vers /admin
+  useEffect(() => {
+    if (role === "admin") {
+      navigate("/admin");
+    }
+  }, [role, navigate]);
 
   return (
     <div className="db">
-      {/* ✅ THIS wrapper makes it centered + dynamic width */}
       <div className="db-main-wrapper">
+
         {/* SIDEBAR */}
         <aside className="sb">
           <div className="sb-brand">
@@ -31,6 +42,7 @@ export default function DashboardPage() {
               onClick={() => {
                 localStorage.removeItem("token");
                 localStorage.removeItem("fullName");
+                localStorage.removeItem("role");
                 window.location.href = "/";
               }}
             >
@@ -41,6 +53,7 @@ export default function DashboardPage() {
 
         {/* MAIN */}
         <main className="db-main">
+
           {/* TOPBAR */}
           <header className="tb">
             <div className="tb-left">
@@ -97,7 +110,6 @@ export default function DashboardPage() {
                   <th>Type</th>
                 </tr>
               </thead>
-
               <tbody>
                 <tr>
                   <td>#12345</td>
@@ -106,7 +118,6 @@ export default function DashboardPage() {
                   <td>$128.89</td>
                   <td>Income</td>
                 </tr>
-
                 <tr>
                   <td>#12346</td>
                   <td>2026-01-21</td>
@@ -117,6 +128,7 @@ export default function DashboardPage() {
               </tbody>
             </table>
           </section>
+
         </main>
       </div>
     </div>
