@@ -2,17 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Assure un affichage correct sur mobile, sans ça le site serait tout zoomé dehors -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noxa Bank - Login</title>
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome : la bibliothèque d'icônes (cadenas, user, œil...) 
+         chargée depuis un CDN, pas besoin de l'installer localement -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
   </head>
   <body>
+
+    <!-- Le seul vrai élément HTML de toute l'appli
+         React va tout injecter ici dynamiquement, la page reste vide sans JS -->
     <div id="root"></div>
+
+    <!-- Point d'entrée de React — type="module" permet d'utiliser les imports ES6
+         Vite s'occupe de tout compiler et bundler derrière -->
     <script type="module" src="/src/main.jsx"></script>
+
   </body>
 </html>
